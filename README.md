@@ -2,3 +2,11 @@
 
 This is a project with beautiful egg timer app to boil your eggs to perfection depending on how you prefer your eggs. 
 
+Soft eggs takes 3 seconds
+Medium takes 5 seconds
+and Hard takes 12 seconds
+
+At the end of the egg cooking, it will make a sound to let you know.
+
+This app is built using basic Swift language.
+Logics mostly include if/else statements with lot of variables used.

@@ -1,4 +1,5 @@
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
     
@@ -9,9 +10,10 @@ class ViewController: UIViewController {
     var timer = Timer() //variable for timer
     var totalTime = 0
     var secondsPassed = 0
+    var player: AVAudioPlayer!
     
     @IBAction func hardnessSelected(_ sender: UIButton) { //Runs when soft,medium or hard button is pressed
-
+        
         timer.invalidate() //everytime button gets pressed it gets invalidated which stop
         let hardness = sender.currentTitle! //soft, medium, hard
         totalTime = eggTimes[hardness]! //assigning value
@@ -31,6 +33,10 @@ class ViewController: UIViewController {
         } else {
             timer.invalidate()
             titleLabel.text = "Done!"
+            
+            let url = Bundle.main.url(forResource: "alarm_sound", withExtension: "mp3")
+            player = try! AVAudioPlayer(contentsOf: url!)
+            player.play()
         }
     }
 }
